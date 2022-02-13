@@ -96,25 +96,3 @@ It holds all unique team names found on the dataset downloaded from kaggle.
 Currently, the model connects to the three tables in our Database using SQLAlchemy. The input for the model, or the features, are the dummy statistics generated as explained above. On the other hand, the target variable is a binary outcome column that was randomly generated and named "Champion". For this segment of the project we omitted the dimensionality reduction aspect of the process, that is, since we are working with dummy data with significantly less columns than the real data, we did not employ Principal Component Analysis (however we will do so when work with the real data). Finally, using Scikit Learn, we trained a classifier (Random Forest) and used it to predict our target variable "Champion". When working will the real data, a further step will be needed, that of determining the feature importance, but since at this stage we are working with dummy features, this step was omitted. 
 
 For more details of the model, see "ML_Model_FP.ipynb" found on this repository. 
-
-### Data Preparation
-
-In order to start testing our model we have cleansed our data in order to have an easier aproach on it.
-- First we imported our dependiencies and sources:
-
-![Data_Preparation_1](https://user-images.githubusercontent.com/89816213/153757758-3a03e959-ae45-4265-b252-20457443cb88.PNG)
-
--Then we found the unique values for the teams variable (we want to show the tams overall performance) and created a new CSV file, which was then added to our database:
-
-![Data_Preparation_2](https://user-images.githubusercontent.com/89816213/153757849-a02a7738-58ce-466d-bae1-aa2faad038ed.PNG)
-
-- In the next step we merged our dataframes into a new one: 
-
-![Data_Preparation_3](https://user-images.githubusercontent.com/89816213/153757993-dd79b665-c8e9-426b-b524-dc76ed88cb6b.PNG)
-
-- Then we created a random series to fill the dataframe and changed our axis to a combination of team-year, so that we could drop those columns and avoid duplicating them:
-
-![Data_Preparation_4](https://user-images.githubusercontent.com/89816213/153758093-d523b7d2-2fc9-49e9-a883-8b5e0232f19f.PNG)
-
-
-
