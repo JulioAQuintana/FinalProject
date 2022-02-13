@@ -12,7 +12,7 @@ As NFL fans we would like to have a better understanding of which stats can be r
 
 ### Data Source
 
-After some scrapping we determined that the best source available is Kaggel (as shown in image above) since it has a pretty complete database and contains a variety of metrics that is not too narrow nor very wide (some sites show quite useless stats). 
+After some searching we determined that the best source available is a Kaggle dataset that is broken down unto 19 csv's containing player basic information, career stats and game logs with a variety of statistical metrics. 
 
 Before deciding on Kaggle we considered some other sites, but they specialize on betting and have already done some of the work we want to do for our project, and we would prefer to do it on our own to make sure the results are not biased or have taken into consideration the wrong variables.
 
