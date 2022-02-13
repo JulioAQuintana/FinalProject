@@ -25,7 +25,7 @@ Before deciding on Kaggle we considered some other sites, but they specialize on
 The main quiestion we hope to answer is: Which of the teams' (offense, defense or special) performance can be determinant on winning the superbowl?
 
 Though we can consider some other questions that we should answer in order to achieve our main goal, such as:
-- Wich stats, of any team, weight the most for a team to be champion?
+- Which stats, of any team, weight the most for a team to be champion?
 - Is there a ratio between offense and defense that implies a higher chance to be SuperBowl champion?
 - Wich stats, though widely recognized, may not be significant on wether a team will or not be champion?
 
@@ -70,9 +70,17 @@ One of our team members created a GitHub repository named "FinalProject", in whi
 
 ## Database
 
-### Dummy Data
+Provisional database in SQL-Posgres contains three tables correponding to:
 
-Up to this moment we have been working on Dummy Data stored in SQL-Postgres, the elaboration of which is shown in "create_dummy_dataset.ipynb" within the "Data_Preparation" directory in this repository.
+### dummy table
+
+In "create_dummmy_dataset.ipynb" in the "Data_Preparation" directory of this repository, we detail the creation of "dummy.csv" (which is found on "Resources").The file "dummy.csv" was then used to create the "dummy" table in our database.
+
+### Superbowl Champions
+
+### unique_teams table
+
+In "unique_teams.ipynb" in the "Data_Preparation" directory of this repository, we detail the creation of "unique_teams.csv" (which si found on "Resources"). The file "unique_teams.csv" was then used to create the "unique_teams" table in our database.
 
 
 ## Machine Learning Model
