@@ -1,5 +1,3 @@
-![NFL](https://user-images.githubusercontent.com/89816213/153754753-6ccc76f6-c5b4-4d93-915b-6bc92151f314.png)
-
 # NFL SuperBowl Champion 
 
 ## Overview
@@ -10,13 +8,9 @@ We would like to put this to the test. The NFL provides a wide range of statisti
 
 ### Reason why we selected this topic
 
-![Plabook](https://user-images.githubusercontent.com/89816213/153755450-3ee415d0-0b55-41c6-996b-3b83e08cf617.png)
-
 As NFL fans we would like to have a better understanding of which stats can be relevant for our teams to turn out as champions (or at lest make it to Playoffs), and we think this tool could help to bringing some light on the matter.
 
 ### Data Source
-
-![Source_Kaggle](https://user-images.githubusercontent.com/89816213/153754678-8a75519d-4684-49e6-98c8-df6a3184a327.PNG)
 
 After some scrapping we determined that the best source available is Kaggel (as shown in image above) since it has a pretty complete database and contains a variety of metrics that is not too narrow nor very wide (some sites show quite useless stats). 
 
