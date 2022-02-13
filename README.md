@@ -87,9 +87,15 @@ Contains the team name of all superbowl champions for the period of analysis.
 
 In "unique_teams.ipynb" in the "Data_Preparation" directory of this repository, we detail the creation of "unique_teams.csv" (which si found on "Resources"). The file "unique_teams.csv" was then used to create the "unique_teams" table in our database.
 
-It holds all unique team names found on the datasets downloaded from kaggle.
+It holds all unique team names found on the dataset downloaded from kaggle.
 
 ## Machine Learning Model
+
+### Overview of the model
+
+Currently, the model connects to the three tables in our Database using SQLAlchemy. The input for the model, or the features, are the dummy statistics generated as explained above. On the other hand, the target variable is a binary outcome column that was randomly generated and named "Champion". For this segment of the project we omitted the dimensionality reduction aspect of the process, that is, since we are working with dummy data with significantly less columns than the real data, we did not employ Principal Component Analysis (however we will do so when work with the real data). Finally, using Scikit Learn, we trained a classifier (Random Forest) and used it to predict our target variable "Champion". When working will the real data, a further step will be needed, that of determining the feature importance, but since at this stage we are working with dummy features, this step was omitted. 
+
+For more details of the model, see "ML_Model_FP.ipynb" found on this repository. 
 
 ### Data Preparation
 
