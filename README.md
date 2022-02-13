@@ -23,7 +23,7 @@ The main quiestion we hope to answer is: Which of the teams' (offense, defense o
 Though we can consider some other questions that we should answer in order to achieve our main goal, such as:
 - Which stats, of any team, weight the most for a team to be champion?
 - Is there a ratio between offense and defense that implies a higher chance to be SuperBowl champion?
-- Wich stats, though widely recognized, may not be significant on wether a team will or not be champion?
+- Which stats, though widely recognized, may not be significant on whether a team will or not be champion?
 
 ## Communication Protocols
 
