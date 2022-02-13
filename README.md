@@ -34,15 +34,15 @@ Though we can consider some other questions that we should answer in order to ac
 The members of the team have provided the following information contact:
 
 Carlos Alvarado:
-- Celphone 8110220336
+- Cellphone 8110220336
 - e-mail   carlosalvaradogo@gmail.com
  
 Mario González:
-- Celphone 5566774418
+- Cellphone 5566774418
 - e-mail   mariogf92@gmail.com
     
 Julio Quintana:
-- Celphone 8441209369
+- Cellphone 8441209369
 - e-mail   quintanajulio@johndeere.com
 
 We have also established the following channels:
@@ -72,10 +72,10 @@ One of our team members created a GitHub repository named "FinalProject", in whi
 
 ### Dummy Data
 
-Up to this moment we have been working on Dummy Data stored in SQL-Postgres:
+Up to this moment we have been working on Dummy Data stored in SQL-Postgres, the elaboration of which is shown in "create_dummy_dataset.ipynb" within the "Data_Preparation" directory in this repository.
 
 
-## Machine Learning Module
+## Machine Learning Model
 
 ### Data Preparation
 
