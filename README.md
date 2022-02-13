@@ -4,7 +4,9 @@
 
 ## Overview
 
-A common saying regarding the NFL is that the offensive wins games, but the defensive wins championships; this, off course, can be tested using a machine learning model, since the NFL presents a wide range of statistics for each player and they can be divided into 'Deffensive stats", "Offensive stats" and "Special Teams stats". The stats of each player can be added to a "Team total" and later be analyzed by the ML model to recieve feedback on which stats have the higher impact on wether a team turned out to be the SuperBowl champion of the year.
+ **Offense wins games, but defense wins championships**
+ 
+We would like to put this to the test. The NFL provides a wide range of statistics for each player, which we will aggregated for each team in the league. Statistics will then be categorized into those pertaining to "Defensive Stats", "Offensive Stats", and "Special Teams". Since there are a lot of statistics within each of those categories, Principal Component Analysis will be used to extract the principal components of each category. We will then look to train a classifier (Random Forest) that can accurately predict the likelihood that a team is champion, with the intention of analyzing the feature importance of principal components representing "Defensive Stats", "Offensive Stats", and "Special Teams", respectively. 
 
 ### Reason why we selected this topic
 
