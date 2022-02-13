@@ -34,16 +34,16 @@ Though we can consider some other questions that we should answer in order to ac
 The members of the team have provided the following information contact:
 
 Carlos Alvarado:
-Celphone 8110220336
-e-mail   carlosalvaradogo@gmail.com
+- Celphone 8110220336
+- e-mail   carlosalvaradogo@gmail.com
  
 Mario González:
-Celphone 5566774418
-e-mail   mariogf92@gmail.com
+- Celphone 5566774418
+- e-mail   mariogf92@gmail.com
     
 Julio Quintana:
-Celphone 8441209369
-e-mail   quintanajulio@johndeere.com
+- Celphone 8441209369
+- e-mail   quintanajulio@johndeere.com
 
 We have also established the following channels:
 
