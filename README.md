@@ -76,12 +76,17 @@ Provisional database in SQL-Posgres contains three tables correponding to:
 
 In "create_dummmy_dataset.ipynb" in the "Data_Preparation" directory of this repository, we detail the creation of "dummy.csv" (which is found on "Resources").The file "dummy.csv" was then used to create the "dummy" table in our database.
 
-### Superbowl Champions
+Contains randomly generated statistics to be used as dummy data (formatted as the real data) for the first segment.
+
+### superbowl table
+
+Contains the team name of all superbowl champions for the period of analysis.
 
 ### unique_teams table
 
 In "unique_teams.ipynb" in the "Data_Preparation" directory of this repository, we detail the creation of "unique_teams.csv" (which si found on "Resources"). The file "unique_teams.csv" was then used to create the "unique_teams" table in our database.
 
+It holds all unique team names found on the datasets downloaded from kaggle.
 
 ## Machine Learning Model
 
