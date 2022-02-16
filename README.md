@@ -1,20 +1,16 @@
-![NFL](https://user-images.githubusercontent.com/89816213/153754753-6ccc76f6-c5b4-4d93-915b-6bc92151f314.png)
-
 # NFL SuperBowl Champion 
 
 ## Overview
 
-A common saying regarding the NFL is that the offensive wins games, but the defensive wins championships; this, off course, can be tested using a machine learning model, since the NFL presents a wide range of statistics for each player and they can be divided into 'Deffensive stats", "Offensive stats" and "Special Teams stats". The stats of each player can be added to a "Team total" and later be analyzed by the ML model to recieve feedback on which stats have the higher impact on wether a team turned out to be the SuperBowl champion of the year.
+ **Offense wins games, but defense wins championships**
+ 
+We would like to put this to the test. The NFL provides a wide range of statistics for each player, which we will aggregated for each team in the league. Statistics will then be categorized into those pertaining to "Defensive Stats", "Offensive Stats", and "Special Teams". Since there are a lot of statistics within each of those categories, Principal Component Analysis will be used to extract the principal components of each category. We will then look to train a classifier (Random Forest) that can accurately predict the likelihood that a team is champion, with the intention of analyzing the feature importance of principal components representing "Defensive Stats", "Offensive Stats", and "Special Teams", respectively. 
 
 ### Reason why we selected this topic
-
-![Plabook](https://user-images.githubusercontent.com/89816213/153755450-3ee415d0-0b55-41c6-996b-3b83e08cf617.png)
 
 As NFL fans we would like to have a better understanding of which stats can be relevant for our teams to turn out as champions (or at lest make it to Playoffs), and we think this tool could help to bringing some light on the matter.
 
 ### Data Source
-
-![Source_Kaggle](https://user-images.githubusercontent.com/89816213/153754678-8a75519d-4684-49e6-98c8-df6a3184a327.PNG)
 
 After some scrapping we determined that the best source available is Kaggel (as shown in image above) since it has a pretty complete database and contains a variety of metrics that is not too narrow nor very wide (some sites show quite useless stats). 
 
@@ -25,7 +21,7 @@ Before deciding on Kaggle we considered some other sites, but they specialize on
 The main quiestion we hope to answer is: Which of the teams' (offense, defense or special) performance can be determinant on winning the superbowl?
 
 Though we can consider some other questions that we should answer in order to achieve our main goal, such as:
-- Wich stats, of any team, weight the most for a team to be champion?
+- Which stats, of any team, weight the most for a team to be champion?
 - Is there a ratio between offense and defense that implies a higher chance to be SuperBowl champion?
 - Wich stats, though widely recognized, may not be significant on wether a team will or not be champion?
 
@@ -34,15 +30,15 @@ Though we can consider some other questions that we should answer in order to ac
 The members of the team have provided the following information contact:
 
 Carlos Alvarado:
-- Celphone 8110220336
+- Cellphone 8110220336
 - e-mail   carlosalvaradogo@gmail.com
  
 Mario González:
-- Celphone 5566774418
+- Cellphone 5566774418
 - e-mail   mariogf92@gmail.com
     
 Julio Quintana:
-- Celphone 8441209369
+- Cellphone 8441209369
 - e-mail   quintanajulio@johndeere.com
 
 We have also established the following channels:
@@ -70,12 +66,25 @@ One of our team members created a GitHub repository named "FinalProject", in whi
 
 ## Database
 
-### Dummy Data
+Provisional database in SQL-Posgres contains three tables correponding to:
 
-Up to this moment we have been working on Dummy Data stored in SQL-Postgres:
+### dummy table
 
+In "create_dummmy_dataset.ipynb" in the "Data_Preparation" directory of this repository, we detail the creation of "dummy.csv" (which is found on "Resources").The file "dummy.csv" was then used to create the "dummy" table in our database.
 
-## Machine Learning Module
+Contains randomly generated statistics to be used as dummy data (formatted as the real data) for the first segment.
+
+### superbowl table
+
+Contains the team name of all superbowl champions for the period of analysis.
+
+### unique_teams table
+
+In "unique_teams.ipynb" in the "Data_Preparation" directory of this repository, we detail the creation of "unique_teams.csv" (which si found on "Resources"). The file "unique_teams.csv" was then used to create the "unique_teams" table in our database.
+
+It holds all unique team names found on the datasets downloaded from kaggle.
+
+## Machine Learning Model
 
 ### Data Preparation
 
