@@ -1,0 +1,94 @@
+CREATE TABLE "superbowl" (
+    "team_year" Varchar(100)   NOT NULL,
+    "year" int   NOT NULL,
+    CONSTRAINT "pk_superbowl" PRIMARY KEY (
+        "team_year"
+     )
+);
+
+CREATE TABLE "unique_teams" (
+    "team"  Varchar(100)  NOT NULL,
+    CONSTRAINT "pk_unique_teams" PRIMARY KEY (
+        "team"
+     )
+);
+
+CREATE TABLE "clean_defensive" (
+    "team_year" Varchar(100)   NOT NULL,
+    "total_tackles_def" int   NOT NULL,
+    "solo_tackles_def" int   NOT NULL,
+    "assisted_tackles_def" int   NOT NULL,
+    "sacks_def" int   NOT NULL,
+    "safties_def" int   NOT NULL,
+    "passes_defended_def" int   NOT NULL,
+    "ints_def" int   NOT NULL,
+    "ints_for_tds_def" int   NOT NULL,
+    "int_yards_def" int   NOT NULL,
+    CONSTRAINT "pk_clean_defensive" PRIMARY KEY (
+        "team_year"
+     )
+);
+
+CREATE TABLE "clean_receiving" (
+    "team_year" Varchar(100)  NOT NULL,
+    "receptions_rec" int   NOT NULL,
+    "receiving_yards_rec" int   NOT NULL,
+    "receiving_tds_rec" int   NOT NULL,
+    "first_down_receptions_rec" int   NOT NULL,
+    "fumbles_rec" int   NOT NULL,
+    CONSTRAINT "pk_clean_receiving" PRIMARY KEY (
+        "team_year"
+     )
+);
+
+CREATE TABLE "clean_passing" (
+    "team_year" Varchar(100)   NOT NULL,
+    "passes_attempted_pass" int   NOT NULL,
+    "passes_completed_pass" int   NOT NULL,
+    "passing_yards_pass" int   NOT NULL,
+    "td_passes_pass" int   NOT NULL,
+    "ints_pass" int   NOT NULL,
+    "sacks_pass" int   NOT NULL,
+    "sacked_yards_lost_pass" int   NOT NULL,
+    CONSTRAINT "pk_clean_passing" PRIMARY KEY (
+        "team_year"
+     )
+);
+
+CREATE TABLE "clean_rushing" (
+    "team_year" Varchar(100)   NOT NULL,
+    "rushing_attempts_rush" int   NOT NULL,
+    "rushing_yards_rush" int   NOT NULL,
+    "rushing_tds_rush" int   NOT NULL,
+    "rushing_first_downs_rush" int   NOT NULL,
+    "fumbles_rush" int   NOT NULL,
+    CONSTRAINT "pk_clean_rushing" PRIMARY KEY (
+        "team_year"
+     )
+);
+
+CREATE TABLE "clean_fumbles" (
+    "team_year" Varchar(100)   NOT NULL,
+    "fumbles_lost_fum" int   NOT NULL,
+    "forced_fumbles_fum" int   NOT NULL,
+    "own_fumble_return_yards_fum" int   NOT NULL,
+    "opponent_fumble_return_yards_fum" int   NOT NULL,
+    "fumble_return_tds" int   NOT NULL,
+    CONSTRAINT "pk_clean_fumbles" PRIMARY KEY (
+        "team_year"
+     )
+);
+
+CREATE TABLE "clean_field_goal_kickers" (
+    "team_year" Varchar(100)   NOT NULL,
+    "kicks_blocked_kick" int   NOT NULL,
+    "fgs_made_kick" int   NOT NULL,
+    "fgs_attempted_kick" int   NOT NULL,
+    "extra_points_attempted_kick" int   NOT NULL,
+    "extra_points_made_kick" int   NOT NULL,
+    "extra_points_blocked_kick" int   NOT NULL,
+    CONSTRAINT "pk_clean_field_goal_kickers" PRIMARY KEY (
+        "team_year"
+     )
+);
+
