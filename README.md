@@ -26,20 +26,36 @@ Though we can consider some other questions that we should answer in order to ac
 - Is there a ratio between offense and defense that implies a higher chance to be SuperBowl champion?
 - Which stats, though widely recognized, may not be significant on whether a team will or not be champion?
 
+## Relevant definitions and explanations
+
+### Football terms:
+
+- Tackle: Stoping the advance of the opponent carrier (player in posession of the ball).
+- Sack: Capturing the Quarterback while he is still in posession of the ball.
+- Rush: Advancing the ball by running (no pass or kick is involved in the play).
+- Pass: Attempt to advance the ball by throwing it to a teammate. 
+- Reception: Recieving the pass thrown by the Quarterback.
+- Field-goal: Football kick that requires a player to kick the ball into the opposing team's goal post, it's worth three points.
+- Extra-Point: Football kick that follows a touchdown and requires a player to kick the ball into the opposing team's goal post, it's worth one point.
+- Down: A play or attempt. Every time a team gets the posession of the ball it has four downs (attempts) to advance the ball ten yards from the position where the first down starts.
+
+### Statistics created for our study:
+
+Our original datasets contain various statistics that are relevant when trying to measure de performance of a single player, but may not be relevant when aggregated to the whole team's performance and could be, in certain cases, duplicating data.
+
+- 
+
 ## Communication Protocols
 
 The members of the team have provided the following information contact:
 
 Carlos Alvarado:
-- Cellphone 8110220336
 - e-mail   carlosalvaradogo@gmail.com
  
 Mario González:
-- Cellphone 5566774418
 - e-mail   mariogf92@gmail.com
     
 Julio Quintana:
-- Cellphone 8441209369
 - e-mail   quintanajulio@johndeere.com
 
 We have also established the following channels:
