@@ -105,11 +105,11 @@ In order to ensure that we train our model with the right data we must first ana
 
 ### Merging clean datasets
 
-In previous steps we cleaned our original datssets to homologate names and years criteria, as well as to drop some clearly unnecessary data, and in this step we merge them into a new dataframe according to the team and year.
+In previous steps we cleaned our original datasets to homologate names and years criterion, as well as to drop some clearly unnecessary data, and in this step we merge them into a new dataframe according to the team and year.
 
 ![original_df](https://user-images.githubusercontent.com/89816213/154853938-ec600501-1e9a-4f60-bfa1-9f8b4556606e.PNG)
 
-### Selecting time period to consider in the model
+### Selecting period to consider in the model
 
 Once we have our merged dataframe we create a new column holding only the year, to see if there is any tendency common to all teams related to a chronological feature.
 ![orig_years_table](https://user-images.githubusercontent.com/89816213/154854422-69a273c7-9b6a-45d5-8286-d25f44aefbdb.PNG)
@@ -120,13 +120,13 @@ In the previous image we can see that many variables hold no information for the
 ![orig_safeties_years](https://user-images.githubusercontent.com/89816213/154854615-cf5af7be-ee28-4880-931d-6d3c3550e982.PNG)
 ![orig_fgs_kicks](https://user-images.githubusercontent.com/89816213/154854616-ae97fb5b-3d43-4089-8dfb-bad52f72c9fd.PNG)
 
-In the previous images we can see that not all statistics were taken into consideration for all years, and specially when considering defensive stats one of the most important variables ("total_tackles") is considered only after the year 2000. Since we want to determine the relevance of defensive, offensive and special teams, our study has to consider only data from 2001 to 2016.
+We can see that not all statistics were registered for all the years in the dataset. Actually, one of the most important variables ("total_tackles") is considered only after the year 2000. According to this, our study has to consider only data from 2001 to 2016.
 
 ![reducing_years_dataframe](https://user-images.githubusercontent.com/89816213/154854815-43fa14c3-b2f6-4ee3-860a-7aea0e4f60c8.PNG)
 
 ### Redundancies and correlated data
 
-Once we have chosen our period of study, we must check if there is still any kind of duplicity among the variables we consider:
+Once we have chosen our period of study, we must check if there is any kind of duplicity among the variables we consider:
 
 ![redundant](https://user-images.githubusercontent.com/89816213/154855860-0fa8cf4b-d0b0-4188-9602-caaa8fb17651.PNG)
 
@@ -134,7 +134,7 @@ The criterion taken to solve this redundancies is explained in detail in the cod
 
 ### Variables created for our study
 
-Some of the variables we dropped might be relevant if one is trying to measure the performance of a single player, but are not relevant when aggregated to the whole team's performance. on the other hand, these variables still offered valuable information, they just needed to be "appliead" in the correct way. With that in consideration we created the following variables:
+Some of the variables we dropped might be relevant if one is trying to measure the performance of a single player, but are not relevant when aggregated to the whole team's performance. On the other hand, these variables still offered valuable information, they just needed to be "applied" in the correct way. With that in mind we created the following variables:
 
 - Field goal success rate (fg_success_rate): Rate of successful field goal attempts (fgs_made_kick) divided by the total field goals attempted (fgs_attempted_kick).
 - Extra point success rate (extra_success_rate): Rate of successful extra point attempts (fgs_made_kick) divided by the total extra points attempted (fgs_attempted_kick).
@@ -143,7 +143,6 @@ Some of the variables we dropped might be relevant if one is trying to measure t
 - Average yards per rush (avg_yards_rucsh): Total rushing yards (rushing_yards_rush) divided by the total rushing attempts (rushing_attempted_rush).
 - Total Kicks blocked (kicks_blocked): Kicks (field goal) attempted and blocked by the defense, plus extra points attempted (extra_points_blocked_kick) and blocked by the defense.
 - Passing attempts to rushing attempts ratio: Total passes attempted (passes_attempted_pass) divided by the total rushing attempts (rushing attempted rush).
-
 
 ## Machine Learning Model
 
