@@ -140,9 +140,11 @@ Some of the variables we dropped might be relevant if one is trying to measure t
 - Extra point success rate (extra_success_rate): Rate of successful extra point attempts (fgs_made_kick) divided by the total extra points attempted (fgs_attempted_kick).
 - Pass success rate (pass_success_rate): Number of passes completed (passes_completed_pass) divided by the total passes attempted (passes_attempted_pass).
 - Average yards per pass (avg_yards_pass): Total receiving yards (recieving_yards_rec) divided by the total passes completed (receptions_rec).
-- Average yards per rush (avg_yards_rucsh): Total rushing yards (rushing_yards_rush) divided by the total rushing attempts (rushing_attempted_rush).
+- Average yards per rush (avg_yards_rush): Total rushing yards (rushing_yards_rush) divided by the total rushing attempts (rushing_attempted_rush).
 - Total Kicks blocked (kicks_blocked): Kicks (field goal) attempted and blocked by the defense, plus extra points attempted (extra_points_blocked_kick) and blocked by the defense.
 - Passing attempts to rushing attempts ratio: Total passes attempted (passes_attempted_pass) divided by the total rushing attempts (rushing attempted rush).
+
+
 
 ## Machine Learning Model
 
