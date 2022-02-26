@@ -92,3 +92,31 @@ CREATE TABLE "clean_field_goal_kickers" (
      )
 );
 
+CREATE TABLE "sb_champion_stats" (
+    "team_year" varchar(100)   NOT NULL,
+    "total_tackles_def" int   NOT NULL,
+    "sacks_def" int   NOT NULL,
+    "safties_def" int   NOT NULL,
+    "passes_defended_def" int   NOT NULL,
+    "ints_def" int   NOT NULL,
+    "fumbles_lost_fum" int   NOT NULL,
+    "td_passes_pass" int   NOT NULL,
+    "ints_pass" int   NOT NULL,
+    "sacks_pass" int   NOT NULL,
+    "receiving_tds_rec" int   NOT NULL,
+    "rushing_tds_rush" int   NOT NULL,
+    "year" int   NOT NULL,
+    "team" Varchar(100)   NOT NULL,
+    "fg_success_rate" float   NOT NULL,
+    "extra_success_rate" float   NOT NULL,
+    "pass_success_rate" float   NOT NULL,
+    "avg_yards_pass" float   NOT NULL,
+    "avg_yards_rush" float   NOT NULL,
+    "kicks_blocked" int   NOT NULL,
+    "passes_per_rushing_plays" float   NOT NULL,
+    "Champion" int   NOT NULL,
+    CONSTRAINT "pk_sb_champion_stats" PRIMARY KEY (
+        "team_year"
+     )
+);
+
