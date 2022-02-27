@@ -62,19 +62,17 @@ We have also established the following channels:
 
 ![Communication_Teams](https://user-images.githubusercontent.com/89816213/153756924-fb376591-3323-44db-b124-de7a6627de97.PNG)
 
-## GitHub
+## This GitHub project
 
 One of our team members created a GitHub repository named "FinalProject", in which we have uploaded our advances, as shown in the images below:
 
 ![GitHub_main](https://user-images.githubusercontent.com/89816213/153757064-37f708a8-9509-4100-a742-44fcf1c4ccf9.PNG)
 
-- Each team membar has created a branch in the repository, in order to be able to advance and test ideas without affecting the main branch:
+- Each team member has created a branch in the repository, in order to be able to advance and test ideas without affecting the main branch:
 
 ![Branches](https://user-images.githubusercontent.com/89816213/153754694-6b71ae49-1f8b-4c9b-b0ba-e6e8293552a6.PNG)
 
-- Each team member has made several commits to the repository:
-
-![Commits](https://user-images.githubusercontent.com/89816213/153754684-f0bda6e8-640b-4ddf-9a90-43cbcbe183b2.PNG)
+Every team member has made several commits, and every merge to the main branch is approved and supervised by at least one of the other members.
 
 ## Database
 
@@ -82,7 +80,7 @@ Our database is hosted in PostgreSQL and we uploaded to it the cleaned datasets 
 
 ## Exploratory Data Analysis
 
-In order to ensure that we train our model with the right data we must first analyze it and see if all our variables are relevant and if some of them might be duplicating information.
+In order to ensure that we train our model with the right data we must first analyze it and see if all our variables are relevant or if some of them might be duplicating information.
 
 ### Merging clean datasets
 
@@ -125,11 +123,11 @@ Some of the variables we dropped might be relevant if one is trying to measure t
 
 ### Final dataset 
 
-After performing the EDA process and getting to know which variables we want to feed the model with, we can create a new dataset with these variables and adding a new one to show which teams were champions in which years, to do so we import the Super Bowl champions dataset (superbowl.csv) and create a new column holding "1" for all team_years, and then perform a left join with "0" in all empty values. This file is saved as "sb_champion_stats".
+After performing the EDA process and getting to know which variables we want to feed the model with, we created a new dataset with these variables and added a new one to show which teams were champions in which years, to do so we imported the Super Bowl champions dataset (superbowl.csv) and created a new column holding "1" for all team_years, and then performed a left join with "0" in all empty values. This file is saved as "sb_champion_stats" in the "Resources" folder.
 
 ## Dashboard
 
-Using the "sb_champion_stats" dataset we creted charts for all variables spreading data considering the champion for each year. From this process we identified some variables in our dataset that could cause trouble in the model. From this visualizations we created a story showing the main variables for offensive and defensive categories, as well as the ones we decided to drop.
+Using the "sb_champion_stats" dataset we creted charts for all variables spreading data considering which team was the champion for each year. From this process we identified some variables in our dataset that could cause trouble in the model. From this visualizations we created a story showing the main variables for offensive and defensive categories, as well as the ones we decided to exclude "Non Relevant Variable".
 
 To see the story refer to: https://public.tableau.com/app/profile/julio.quintana1006/viz/FinalProject_NFL_Champions_Dash/NFLChampionsAnalysis_1
 
@@ -154,17 +152,17 @@ This problem is adressed by using random over and under sampling, as well as by 
 Since we are working with labeled data and we have a clear target it's logical to use supervised learning models. In the "ML_Model" files we show the process and results for the following methods:
 - Logistic Regression
 - Random forest Classifier
-- Balanced Random Forest Classifier (this specific method balances the observations and does not need previous balancing)
+- Balanced Random Forest Classifier (this specific method balances the observations by itself, so it doesn't need previous balancing)
 
 ### First iteration (refer to "ML_model_first_iteration.ipynb, in the "Model" folder)
 
-During this iteration all models were unable to predict the champions accurately, no matter which balancing technique was used. It's also relevant to point that eventhough some models did manage to have "acceptable" perfromance they did so by affecting the predictions of "not champion".
+During this iteration all models were unable to predict the champions accurately, no matter which balancing technique was used. It's also relevant to point that eventhough some models did manage to have "acceptable" perfromance they did so by affecting the predictions of "not champion" observations.
 
-In this model we performed a study of the feature importance and comparred the p-values to see which variables might be obstaculizing our models rather than helping it learn. From this analysis we decideed to exclude from our study "avg_yards_rush", "avg_yards_pass", "ints_def" and "total_tackles_def".
+In this model we performed a study of the feature importance and compared the p-values to see which variables might be obstaculizing our model rather than helping it learn. From this analysis we decided to exclude from our study "avg_yards_rush", "avg_yards_pass", "ints_def" and "total_tackles_def".
 
 ### Second iteration (refer to "ML_model_second_iteration.ipynb, in the "Model" folder)
 
-The process for the second iteration was pretty much the same as in the first iteration, with the only difference that we dropped the variables that, according to our analysisis performed in the prevvious iteration, were not relevant for the model. Strange enough, but the models actually performed even worse than in the previous iteration!
+The process for the second iteration was pretty much the same as in the first iteration, with the only difference that we dropped the variables that, according to our analysisis performed in the previous iteration, were not relevant for the model. Strange enough, but the models actually performed even worse than in the previous iteration!
 
 This, of course, tells us that even if the variables dropped seemed not to be relevant on their own, there is some correlation between them and a team's success. With that in mind we ran a new iteration.
 
