@@ -4,27 +4,25 @@
 
  **Offense wins games, but defense wins championships**
  
-We would like to put this to the test. The NFL provides a wide range of statistics for each player, which we will aggregate for each team in the league. Statistics will then be categorized into those pertaining to "Defensive Stats", "Offensive Stats", and "Special Teams". Since there are a lot of statistics within each of those categories we will examine which are really valuable by applying EDA, and then Principal Component Analysis will be used to extract the principal components of each category. We will then train a classifier (Random Forest) that can accurately predict the likelihood that a team is champion, with the intention of analyzing the feature importance of principal components representing "Defensive Stats", "Offensive Stats", and "Special Teams", respectively. 
+We would like to put this to the test. The NFL provides a wide range of statistics for each player, which we will aggregate for each team in the league. Statistics will then be categorized into those pertaining to "Defensive Stats", "Offensive Stats", and "Special Teams". Since there are a lot of statistics within each of those categories we will examine which are really valuable by applying EDA, and then Principal Component Analysis will be used to extract the principal components of each category. We will then train a classifier (Random Forest) that can accurately predict the likelihood of a team being the champion, with the intention of analyzing the feature importance of principal components representing "Defensive Stats", "Offensive Stats", and "Special Teams", respectively. 
 
 ### Reason why we selected this topic
 
-As NFL fans, we would like to have a better understanding of which stats can be relevant for our teams to turn out as champions (or at lest make it to Playoffs), and we think this tool could help to bringing some light on the matter.
+As NFL fans, we would like to have a better understanding of which stats can be relevant for our teams to turn out as champions, and we think this tool could help to bring some light on the matter.
 
 ### Data Source
 
-
 After some searching we determined that the best source available is a Kaggle dataset (https://www.kaggle.com/kendallgillies/nflstatistics) that is broken down unto 19 csv's containing players' basic information, career stats and game logs with a variety of statistical metrics. 
 
-Before deciding on Kaggle we considered some other sites, but they specialize on betting and have already done some of the work we want to do for our project, and we would prefer to do it on our own to make sure the results are not biased or have taken into consideration the wrong variables.
+Before deciding on Kaggle we considered some other sites, but they mostly specialize on betting and have already done some of the work we want to do for our project, and we would prefer to do it on our own to make sure the results are not biased or have taken into consideration the wrong variables.
 
 ### Questions we hope to answer
 
-The main quiestion we hope to answer is: Which of the teams' (offense, defense or special) performance can be determinant on winning the superbowl?
+The main quiestion we hope to answer is: Is it possible to predict the Super Bowl champion considering the available statistics?
 
 We can consider some other questions that we should answer in order to achieve our main goal, such as:
-- Which stats, of any team, weight the most for a team to be champion?
-- Is there a ratio between offense and defense that implies a higher chance to be SuperBowl champion?
-- Which stats, though widely recognized, may not be significant on whether a team will or not be champion?
+- Which set of stats (Offense, Defense or Special Teams) weights the most for a team to be champion?
+- Which specific stats weight the most for a team to be champion?
 
 ## Glosary
 
@@ -39,7 +37,7 @@ We can consider some other questions that we should answer in order to achieve o
 
 ## Communication Protocols
 
-The members of the team have provided the following information contact:
+The members of the team have provided the following contact information:
 
 Carlos Alvarado:
 - e-mail   carlosalvaradogo@gmail.com
@@ -80,24 +78,7 @@ One of our team members created a GitHub repository named "FinalProject", in whi
 
 ## Database
 
-Provisional database in SQL-Posgres contains three tables correponding to:
-
-### dummy table
-
-
-In "create_dummmy_dataset.ipynb" in the "Data_Preparation" directory of this repository, we detail the creation of "dummy.csv" (which is found on "Resources").The file "dummy.csv" was then used to create the "dummy" table in our database.
-
-Contains randomly generated statistics to be used as dummy data (formatted as the real data) for the first segment.
-
-### superbowl table
-
-Contains the team name of all superbowl champions for the period of analysis.
-
-### unique_teams table
-
-In "unique_teams.ipynb" in the "Data_Preparation" directory of this repository, we detail the creation of "unique_teams.csv" (which is found on "Resources"). The file "unique_teams.csv" was then used to create the "unique_teams" table in our database.
-
-It holds all unique team names found on the dataset downloaded from kaggle.
+Our database is hosted in PostgreSQL and we uploaded to it the cleaned datasets in the "Career stats" category. For further information on the process of cleaning the data please refer to the files in the folder "Data_Preparation" in this project, which contains the files used for preparing each dataset for analysis and later use for the model, as well as the file "NFLDB_script" with the queries to create the tables in our database .  
 
 ## Exploratory Data Analysis
 
@@ -116,9 +97,7 @@ Once we have our merged dataframe we create a new column holding only the year, 
 
 In the previous image we can see that many variables hold no information for the years shown, therefore our next logical step is to see which variables are available through the years, so we can determine a period of study holding data for all relevant variables.
 
-![oirg_def_tackles](https://user-images.githubusercontent.com/89816213/154854619-336e02a0-5c5a-48ef-9369-c9b71bdf8dfc.PNG)
-![orig_safeties_years](https://user-images.githubusercontent.com/89816213/154854615-cf5af7be-ee28-4880-931d-6d3c3550e982.PNG)
-![orig_fgs_kicks](https://user-images.githubusercontent.com/89816213/154854616-ae97fb5b-3d43-4089-8dfb-bad52f72c9fd.PNG)
+![year_stats](https://user-images.githubusercontent.com/89816213/155883967-5510bc85-f04a-4c1b-bfdf-100e0052834b.PNG)
 
 We can see that not all statistics were registered for all the years in the dataset. Actually, one of the most important variables ("total_tackles") is considered only after the year 2000. According to this, our study has to consider only data from 2001 to 2016.
 
@@ -158,15 +137,15 @@ To see the story refer to: https://public.tableau.com/app/profile/julio.quintana
 
 ### Source
 
-Our model connects with the tables in our PostrgreSQL Database using SQLAlchemy. The input for the model is the file created int the last step of the EDA process. 
+Our model connects with the tables in our PostrgreSQL Database using SQLAlchemy. The input for the model is the "sb_champion_stats" file created int the last step of the EDA process. 
 
 ### Libraries
 
-We used Pandas, Numpy and PyPlot to perform some further analysis of our data, given the results from Scikit-learn and Imb-learn imports.
+We used Pandas, Numpy and PyPlot to perform some further analysis of our data, given the results from Scikit-learn and Imb-learn imports, which are used to create and evaluate Machine Learning models.
 
 ### Adressing target variable imbalance
 
-Our objective is to predict the Super Bowl champions (that is our target variable) indicated as "1" in the "Champion" column and, as we know, there is only one champion for each year but we have 31 teams that are not champions "0" for that same period! If we pretend to create random testing and training tests, most of the times they will not have a champion in their set and the model would not learn what stats are involved in "creating a champion".
+Our objective is to predict the Super Bowl champions (target variable) indicated as "1" in the "Champion" column of our dataset and, as we know, there is only one champion for each year, but we have 31 teams that are not champions ("0") for that same period! If we pretend to create random testing and training tests, most of the times they will not have a champion in their set and the model would not learn what stats are involved in "creating a champion".
 
 This problem is adressed by using random over and under sampling, as well as by using SMOTE oversampling and SMOTEEN. The specifics for each method are shown in the "ML_Model_first_iteration.ipynb" file, as well as in the subsequent iterations (second and third).
 
@@ -177,5 +156,24 @@ Since we are working with labeled data and we have a clear target it's logical t
 - Random forest Classifier
 - Balanced Random Forest Classifier (this specific method balances the observations and does not need previous balancing)
 
+### First iteration (refer to "ML_model_first_iteration.ipynb, in the "Model" folder)
 
+During this iteration all models were unable to predict the champions accurately, no matter which balancing technique was used. It's also relevant to point that eventhough some models did manage to have "acceptable" perfromance they did so by affecting the predictions of "not champion".
+
+In this model we performed a study of the feature importance and comparred the p-values to see which variables might be obstaculizing our models rather than helping it learn. From this analysis we decideed to exclude from our study "avg_yards_rush", "avg_yards_pass", "ints_def" and "total_tackles_def".
+
+### Second iteration (refer to "ML_model_second_iteration.ipynb, in the "Model" folder)
+
+The process for the second iteration was pretty much the same as in the first iteration, with the only difference that we dropped the variables that, according to our analysisis performed in the prevvious iteration, were not relevant for the model. Strange enough, but the models actually performed even worse than in the previous iteration!
+
+This, of course, tells us that even if the variables dropped seemed not to be relevant on their own, there is some correlation between them and a team's success. With that in mind we ran a new iteration.
+
+### Third iteration (refer to "ML_model_third_iteration.ipynb, in the "Model" folder)
+
+For this iteration we decided to re-run the process without dropping the variables we eliminated in the second iteration and try some other ways to improve the performance of our model.
+
+An investigation on how some programers have solved this problem showed that many of them improved their models by increasing the thresholds of their models. This, simply explained, means that the model will not just "vote" for a result given that it has a probability higher than 50% of being true, but will only do so if the probability is over a given condition (we ran the model with thresholds from 50% to 90%)
+
+The best result we obtained came from a model that performed logistic regression using naive random oversampling with a 75% decision threshold. This is our model!
  
+![Selected_model](https://user-images.githubusercontent.com/89816213/155885772-fdff9e25-14ea-404e-adbf-da92d07c21b4.PNG)
