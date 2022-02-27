@@ -127,11 +127,15 @@ After performing the EDA process and getting to know which variables we want to 
 
 ## Dashboard
 
-Using the "sb_champion_stats" dataset we creted charts for all variables spreading data considering which team was the champion for each year. From this process we identified some variables in our dataset that could cause trouble in the model. From this visualizations we created a story showing the main variables for offensive and defensive categories, as well as the ones we decided to exclude "Non Relevant Variable".
+## Project Dashboard
 
-To see the story refer to: https://public.tableau.com/app/profile/julio.quintana1006/viz/FinalProject_NFL_Champions_Dash/NFLChampionsAnalysis_1
+### Dashboard Definition 
 
-Additionally we created a Google Slides presentation to give an overview of this project, to see it go to https://docs.google.com/presentation/d/1eM06rsP77x76NgBpDXDDxPqoE1Rq0Wlk9VHd3mIImzc/edit?usp=sharing
+Using public Tableau platform, we create a web dashboard for end user that shows information about NFL statistic variables, also in the story section you can find data classified for defense and offense statistics by champion status used in the machine learning model and in same way the dashboard shows Non relevant variables dropped for model. Please see reference in the following link:
+
+[NFL Champions Analysis](https://public.tableau.com/app/profile/julio.quintana1006/viz/FinalProject_NFL_Champions_Dash/NFLChampionsAnalysis_1#1)
+
+Additionally we created a Google Slides presentation with the Overview of the project, to see it refer to the following link: [Presentation](https://docs.google.com/presentation/d/1eM06rsP77x76NgBpDXDDxPqoE1Rq0Wlk9VHd3mIImzc/edit?usp=sharing)
 
 ## Machine Learning Model
 
