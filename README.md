@@ -131,6 +131,8 @@ Using the "sb_champion_stats" dataset we creted charts for all variables spreadi
 
 To see the story refer to: https://public.tableau.com/app/profile/julio.quintana1006/viz/FinalProject_NFL_Champions_Dash/NFLChampionsAnalysis_1
 
+Additionally we created a Google Slides presentation to give an overview of this project, to see it go to https://docs.google.com/presentation/d/1eM06rsP77x76NgBpDXDDxPqoE1Rq0Wlk9VHd3mIImzc/edit?usp=sharing
+
 ## Machine Learning Model
 
 ### Source
