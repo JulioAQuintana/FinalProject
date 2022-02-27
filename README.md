@@ -121,22 +121,6 @@ Some of the variables we dropped might be relevant if one is trying to measure t
 - Total Kicks blocked (kicks_blocked): Kicks (field goal) attempted and blocked by the defense, plus extra points attempted (extra_points_blocked_kick) and blocked by the defense.
 - Passing attempts to rushing attempts ratio: Total passes attempted (passes_attempted_pass) divided by the total rushing attempts (rushing attempted rush).
 
-### Final dataset 
-
-After performing the EDA process and getting to know which variables we want to feed the model with, we created a new dataset with these variables and added a new one to show which teams were champions in which years, to do so we imported the Super Bowl champions dataset (superbowl.csv) and created a new column holding "1" for all team_years, and then performed a left join with "0" in all empty values. This file is saved as "sb_champion_stats" in the "Resources" folder.
-
-## Dashboard
-
-## Project Dashboard
-
-### Dashboard Definition 
-
-Using public Tableau platform, we create a web dashboard for end user that shows information about NFL statistic variables, also in the story section you can find data classified for defense and offense statistics by champion status used in the machine learning model and in same way the dashboard shows Non relevant variables dropped for model. Please see reference in the following link:
-
-[NFL Champions Analysis](https://public.tableau.com/app/profile/julio.quintana1006/viz/FinalProject_NFL_Champions_Dash/NFLChampionsAnalysis_1#1)
-
-Additionally we created a Google Slides presentation with the Overview of the project, to see it refer to the following link: [Presentation](https://docs.google.com/presentation/d/1eM06rsP77x76NgBpDXDDxPqoE1Rq0Wlk9VHd3mIImzc/edit?usp=sharing)
-
 ## Machine Learning Model
 
 ### Source
