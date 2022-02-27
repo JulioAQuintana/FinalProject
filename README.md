@@ -144,12 +144,38 @@ Some of the variables we dropped might be relevant if one is trying to measure t
 - Total Kicks blocked (kicks_blocked): Kicks (field goal) attempted and blocked by the defense, plus extra points attempted (extra_points_blocked_kick) and blocked by the defense.
 - Passing attempts to rushing attempts ratio: Total passes attempted (passes_attempted_pass) divided by the total rushing attempts (rushing attempted rush).
 
+### Final dataset 
 
+After performing the EDA process and getting to know which variables we want to feed the model with, we can create a new dataset with these variables and adding a new one to show which teams were champions in which years, to do so we import the Super Bowl champions dataset (superbowl.csv) and create a new column holding "1" for all team_years, and then perform a left join with "0" in all empty values. This file is saved as "sb_champion_stats".
+
+## Dashboard
+
+Using the "sb_champion_stats" dataset we creted charts for all variables spreading data considering the champion for each year. From this process we identified some variables in our dataset that could cause trouble in the model. From this visualizations we created a story showing the main variables for offensive and defensive categories, as well as the ones we decided to drop.
+
+To see the story refer to: https://public.tableau.com/app/profile/julio.quintana1006/viz/FinalProject_NFL_Champions_Dash/NFLChampionsAnalysis_1
 
 ## Machine Learning Model
 
-### Overview of the model
+### Source
 
-Currently, the model connects to the three tables in our Database using SQLAlchemy. The input for the model, or the features, are the dummy statistics generated as explained above. On the other hand, the target variable is a binary outcome column that was randomly generated and named "Champion". For this segment of the project we omitted the dimensionality reduction aspect of the process, that is, since we are working with dummy data with significantly less columns than the real data, we did not employ Principal Component Analysis (however we will do so when work with the real data). Finally, using Scikit Learn, we trained a classifier (Random Forest) and used it to predict our target variable "Champion". When working will the real data, a further step will be needed, that of determining the feature importance, but since at this stage we are working with dummy features, this step was omitted. 
+Our model connects with the tables in our PostrgreSQL Database using SQLAlchemy. The input for the model is the file created int the last step of the EDA process. 
 
-For more details of the model, see "ML_Model_FP.ipynb" found on this repository. 
+### Libraries
+
+We used Pandas, Numpy and PyPlot to perform some further analysis of our data, given the results from Scikit-learn and Imb-learn imports.
+
+### Adressing target variable imbalance
+
+Our objective is to predict the Super Bowl champions (that is our target variable) indicated as "1" in the "Champion" column and, as we know, there is only one champion for each year but we have 31 teams that are not champions "0" for that same period! If we pretend to create random testing and training tests, most of the times they will not have a champion in their set and the model would not learn what stats are involved in "creating a champion".
+
+This problem is adressed by using random over and under sampling, as well as by using SMOTE oversampling and SMOTEEN. The specifics for each method are shown in the "ML_Model_first_iteration.ipynb" file, as well as in the subsequent iterations (second and third).
+
+### Supervised learning Models
+
+Since we are working with labeled data and we have a clear target it's logical to use supervised learning models. In the "ML_Model" files we show the process and results for the following methods:
+- Logistic Regression
+- Random forest Classifier
+- Balanced Random Forest Classifier (this specific method balances the observations and does not need previous balancing)
+
+
+ 
