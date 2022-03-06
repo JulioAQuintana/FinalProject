@@ -122,7 +122,7 @@ We expected to answer which variables were the most relevant to predict the Supe
 
 ![Cumulative](https://user-images.githubusercontent.com/89816213/156940014-999b9ea2-37b4-4556-9667-8f6526678f06.PNG)
 
-This results show that se would need at least 5 fariables to predict the SuperBowl champion, and that  means they could be scattered among any of the categories. Our only task is, therefore, to focus on predicting the SuperBowl champion.
+This results show that we would need at least 5 variables to predict the SuperBowl champion, and that  means they could be scattered among any of the categories. Our only task is, therefore, to focus on predicting the SuperBowl champion.
 
 ### Supervised learning Models
 
