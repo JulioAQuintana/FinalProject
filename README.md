@@ -114,6 +114,16 @@ Our objective is to predict the Super Bowl champions (target variable) indicated
 
 This problem is adressed by using random over and under sampling, as well as by using SMOTE oversampling and SMOTEEN. The specifics for each method are shown in the "ML_Model_first_iteration.ipynb" file, as well as in the subsequent iterations (second and third).
 
+### Principal Component Analysis
+
+We expected to answer which variables were the most relevant to predict the Super Bowl champion, and in such endeaver decided to perform PCA to detrmine also which set of variables is more important. The results are as follows:
+
+![Variance](https://user-images.githubusercontent.com/89816213/156940011-95c24bab-671a-4c2d-87e7-39140f0c9d40.PNG)
+
+![Cumulative](https://user-images.githubusercontent.com/89816213/156940014-999b9ea2-37b4-4556-9667-8f6526678f06.PNG)
+
+This results show that se would need at least 5 fariables to predict the SuperBowl champion, and that  means they could be scattered among any of the categories. Our only task is, therefore, to focus on predicting the SuperBowl champion.
+
 ### Supervised learning Models
 
 Since we are working with labeled data and we have a clear target it's logical to use supervised learning models. In the "ML_Model" files we show the process and results for the following methods:
