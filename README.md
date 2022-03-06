@@ -35,45 +35,6 @@ We can consider some other questions that we should answer in order to achieve o
 - Extra-Point: Football kick that follows a touchdown and requires a player to kick the ball into the opposing team's goal post, it's worth one point.
 - Down: A play or attempt. Every time a team gets the posession of the ball it has four downs (attempts) to advance the ball ten yards from the position where the first down starts.
 
-## Communication Protocols
-
-The members of the team have provided the following contact information:
-
-Carlos Alvarado:
-- e-mail   carlosalvaradogo@gmail.com
- 
-Mario González:
-- e-mail   mariogf92@gmail.com
-    
-Julio Quintana:
-- e-mail   quintanajulio@johndeere.com
-
-We have also established the following channels:
-
-- WhatsApp Group
-
-![Communication_WA](https://user-images.githubusercontent.com/89816213/153756886-0ca35645-5229-4014-9b92-bf0577c09e99.PNG)
-
-- Slack (with help of our TA)
-
-![Communication_Slack](https://user-images.githubusercontent.com/89816213/153756906-6be5804f-383d-4067-9c92-da2ef09e5141.PNG)
-
-- Teams meetings
-
-![Communication_Teams](https://user-images.githubusercontent.com/89816213/153756924-fb376591-3323-44db-b124-de7a6627de97.PNG)
-
-## This GitHub project
-
-One of our team members created a GitHub repository named "FinalProject", in which we have uploaded our advances, as shown in the images below:
-
-![GitHub_main](https://user-images.githubusercontent.com/89816213/153757064-37f708a8-9509-4100-a742-44fcf1c4ccf9.PNG)
-
-- Each team member has created a branch in the repository, in order to be able to advance and test ideas without affecting the main branch:
-
-![Branches](https://user-images.githubusercontent.com/89816213/153754694-6b71ae49-1f8b-4c9b-b0ba-e6e8293552a6.PNG)
-
-Every team member has made several commits, and every merge to the main branch is approved and supervised by at least one of the other members.
-
 ## Database
 
 Our database is hosted in PostgreSQL and we uploaded to it the cleaned datasets in the "Career stats" category. For further information on the process of cleaning the data please refer to the files in the folder "Data_Preparation" in this project, which contains the files used for preparing each dataset for analysis and later use for the model, as well as the file "NFLDB_script" with the queries to create the tables in our database .  
