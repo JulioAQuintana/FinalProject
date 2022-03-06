@@ -45,7 +45,15 @@ All the datasets we worked with went through a cleaning process, for efficiency 
 
 ### Unnecessary data
 
+Our datasets contian data referred to the name or position of the players. While this information may be relevant to understand individual performance, we do not need it to evaluate the team's performance, therefore this variables are dropped fromm our dataset.
 
+### Data Types
+
+Given that we will use our data for a ML Model we need all or data to be "integer" type, and the next step is to drop or convert all data that is not an integer. 
+
+### Creating unique identifiers and ordering columns
+
+As we intend to evaluate the performance of each team on a given year, we can add our statistics for a new variable called "team_year" holding our needed identifiers; and once we have it we can reorder our columns and export a new csv file that will be added to our database.
 
 
 
