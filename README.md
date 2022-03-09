@@ -167,8 +167,6 @@ Our model does not answer the questions in the way we expected, but actually giv
 
 ## Dashboard
 
-Using public Tableau platform, we created a web dashboard for end user that shows information about NFL statistic variables, also in the story section you can find data classified for defense and offense statistics by champion status used in the machine learning model and in same way the dashboard shows Non relevant variables dropped for model. Please see reference in the following link:
-
-[NFL Champions Analysis](https://public.tableau.com/app/profile/julio.quintana1006/viz/FinalProject_NFL_Champions_Dash/NFLChampionsAnalysis_1#1)
+Using public Tableau platform, we created a web dashboard for end users to consult the variables used in our model, and a Story that shows data classified in "Defense" and "Offense" statistics used in the machine learning model, showing "champion" and "not champion" stats for each of them, and in same way the dashboard shows "Non relevant" variables dropped from the model. To visit this dashboard please go to: [NFL Champions Analysis](https://public.tableau.com/app/profile/julio.quintana1006/viz/FinalProject_NFL_Champions_Dash/NFLChampionsAnalysis_1#1)
 
 Additionally we created a Google Slides presentation with the Overview of the project, to see it refer to the following link: [Presentation](https://docs.google.com/presentation/d/1eM06rsP77x76NgBpDXDDxPqoE1Rq0Wlk9VHd3mIImzc/edit?usp=sharing)
