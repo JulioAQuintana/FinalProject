@@ -47,32 +47,30 @@ In order to ensure that we train our model with the right data we must first ana
 
 In previous steps we cleaned our original datasets to homologate names and years criterion, as well as to drop some clearly unnecessary data, and in this step we merge them into a new dataframe according to the team and year.
 
-![original_df](https://user-images.githubusercontent.com/89816213/154853938-ec600501-1e9a-4f60-bfa1-9f8b4556606e.PNG)
-
 ### Selecting period to consider in the model
 
 Once we have our merged dataframe we create a new column holding only the year, to see if there is any tendency common to all teams related to a chronological feature.
-![orig_years_table](https://user-images.githubusercontent.com/89816213/154854422-69a273c7-9b6a-45d5-8286-d25f44aefbdb.PNG)
 
-In the previous image we can see that many variables hold no information for the years shown, therefore our next logical step is to see which variables are available through the years, so we can determine a period of study holding data for all relevant variables.
+![safeties_def](https://user-images.githubusercontent.com/89816213/157457714-a1b110c1-0eb9-4e30-88af-e8d4eb6ff5db.PNG)
 
-![year_stats](https://user-images.githubusercontent.com/89816213/155883967-5510bc85-f04a-4c1b-bfdf-100e0052834b.PNG)
+![sacks_def](https://user-images.githubusercontent.com/89816213/157457706-cc3b02f8-cc56-4df3-9e49-1328cc78ff58.PNG)  
+
+![Total_tackles](https://user-images.githubusercontent.com/89816213/157457735-03d1c44b-32dd-4cfd-bccc-47d75093069d.PNG)
+
+While processing the information we realized  that many variables hold no information for the years shown, therefore our next logical step is to see which variables are available through the years, so we can determine a period of study holding data for all relevant variables.
 
 We can see that not all statistics were registered for all the years in the dataset. Actually, one of the most important variables ("total_tackles") is considered only after the year 2000. According to this, our study has to consider only data from 2001 to 2016.
 
-![reducing_years_dataframe](https://user-images.githubusercontent.com/89816213/154854815-43fa14c3-b2f6-4ee3-860a-7aea0e4f60c8.PNG)
+![stats_years](https://user-images.githubusercontent.com/89816213/157457993-2bf833a3-827f-45d7-983c-ecd0003c174b.PNG)
 
 ### Redundancies and correlated data
 
-Once we have chosen our period of study, we must check if there is any kind of duplicity among the variables we consider:
-
-![redundant](https://user-images.githubusercontent.com/89816213/154855860-0fa8cf4b-d0b0-4188-9602-caaa8fb17651.PNG)
-
-The criterion taken to solve this redundancies is explained in detail in the code used for the EDA (stat_analysis_by_year.ipynb).
+Once we had chosen our period of study, we looked for any kind of duplicity among the variables we considered, and found that there were many variables that either referred to the same stat or worked better when considered as a ratio. The criterion taken to solve this redundancies
+are explained in detail in the code used for the EDA (stat_analysis_by_year.ipynb).
 
 ### Variables created for our study
 
-Some of the variables we dropped might be relevant if one is trying to measure the performance of a single player, but are not relevant when aggregated to the whole team's performance. On the other hand, these variables still offered valuable information, they just needed to be "applied" in the correct way. With that in mind we created the following variables:
+Some of the variables we dropped might be relevant if one is trying to measure the performance of a single player, but are not relevant when aggregated to the whole team's performance. On the other hand, these variables still offered valuable information, they just needed to be used in the correct way. With that in mind we created the following variables:
 
 - Field goal success rate (fg_success_rate): Rate of successful field goal attempts (fgs_made_kick) divided by the total field goals attempted (fgs_attempted_kick).
 - Extra point success rate (extra_success_rate): Rate of successful extra point attempts (fgs_made_kick) divided by the total extra points attempted (fgs_attempted_kick).
@@ -85,18 +83,6 @@ Some of the variables we dropped might be relevant if one is trying to measure t
 ### Final dataset 
 
 After performing the EDA process and getting to know which variables we want to feed the model with, we created a new dataset with these variables and added a new one to show which teams were champions in which years, to do so we imported the Super Bowl champions dataset (superbowl.csv) and created a new column holding "1" for all team_years, and then performed a left join with "0" in all empty values. This file is saved as "sb_champion_stats" in the "Resources" folder.
-
-## Dashboard
-
-## Project Dashboard
-
-### Dashboard Definition 
-
-Using public Tableau platform, we create a web dashboard for end user that shows information about NFL statistic variables, also in the story section you can find data classified for defense and offense statistics by champion status used in the machine learning model and in same way the dashboard shows Non relevant variables dropped for model. Please see reference in the following link:
-
-[NFL Champions Analysis](https://public.tableau.com/app/profile/julio.quintana1006/viz/FinalProject_NFL_Champions_Dash/NFLChampionsAnalysis_1#1)
-
-Additionally we created a Google Slides presentation with the Overview of the project, to see it refer to the following link: [Presentation](https://docs.google.com/presentation/d/1eM06rsP77x76NgBpDXDDxPqoE1Rq0Wlk9VHd3mIImzc/edit?usp=sharing)
 
 ## Machine Learning Model
 
@@ -116,13 +102,13 @@ This problem is adressed by using random over and under sampling, as well as by 
 
 ### Principal Component Analysis
 
-We expected to answer which variables were the most relevant to predict the Super Bowl champion, and in such endeaver decided to perform PCA to detrmine also which set of variables is more important. The results are as follows:
+We expected to answer which variables were the most relevant to predict the Super Bowl champion, and in such endeavour decided to perform PCA to determine also which set of variables is more important. The results are as follows:
 
 ![Variance](https://user-images.githubusercontent.com/89816213/156940011-95c24bab-671a-4c2d-87e7-39140f0c9d40.PNG)
 
 ![Cumulative](https://user-images.githubusercontent.com/89816213/156940014-999b9ea2-37b4-4556-9667-8f6526678f06.PNG)
 
-This results show that we would need at least 5 variables to predict the SuperBowl champion, and that  means they could be scattered among any of the categories. Our only task is, therefore, to focus on predicting the SuperBowl champion.
+This results show that we would need at least 5 variables to predict the Super Bowl champion, and that  means they could be scattered among any of the categories. The only task left is to focus on predicting the SuperBowl champion.
 
 ### Supervised learning Models
 
@@ -131,24 +117,58 @@ Since we are working with labeled data and we have a clear target it's logical t
 - Random forest Classifier
 - Balanced Random Forest Classifier (this specific method balances the observations by itself, so it doesn't need previous balancing)
 
-### First iteration (refer to "ML_model_first_iteration.ipynb, in the "Model" folder)
+### First iteration (refer to Model/ML_model_first_iteration.ipynb)
 
 During this iteration all models were unable to predict the champions accurately, no matter which balancing technique was used. It's also relevant to point that eventhough some models did manage to have "acceptable" perfromance they did so by affecting the predictions of "not champion" observations.
 
 In this model we performed a study of the feature importance and compared the p-values to see which variables might be obstaculizing our model rather than helping it learn. From this analysis we decided to exclude from our study "avg_yards_rush", "avg_yards_pass", "ints_def" and "total_tackles_def".
 
-### Second iteration (refer to "ML_model_second_iteration.ipynb, in the "Model" folder)
+### Second iteration (refer to Model/ML_model_second_iteration.ipynb)
 
 The process for the second iteration was pretty much the same as in the first iteration, with the only difference that we dropped the variables that, according to our analysisis performed in the previous iteration, were not relevant for the model. Strange enough, but the models actually performed even worse than in the previous iteration!
 
 This, of course, tells us that even if the variables dropped seemed not to be relevant on their own, there is some correlation between them and a team's success. With that in mind we ran a new iteration.
 
-### Third iteration (refer to "ML_model_third_iteration.ipynb, in the "Model" folder)
+### Third iteration (refer to Model/ML_model_third_iteration.ipynb)
 
 For this iteration we decided to re-run the process without dropping the variables we eliminated in the second iteration and try some other ways to improve the performance of our model.
 
 An investigation on how some programers have solved this problem showed that many of them improved their models by increasing the thresholds of their models. This, simply explained, means that the model will not just "vote" for a result given that it has a probability higher than 50% of being true, but will only do so if the probability is over a given condition (we ran the model with thresholds from 50% to 90%)
 
-The best result we obtained came from a model that performed logistic regression using naive random oversampling with a 75% decision threshold. This is our model!
+The best result we obtained came from a model that performed logistic regression using naive random oversampling with a 75% decision threshold.
  
-![Selected_model](https://user-images.githubusercontent.com/89816213/155885772-fdff9e25-14ea-404e-adbf-da92d07c21b4.PNG)
+
+### Final Model (ML_Model_FP)
+
+Our Model has the following characteristics:
+- Conected to PostgreSQL via SQAlchemy to access our datasets (tables)
+- Imports data from "sb_champion_stats" (created in the EDA process)
+- Scales data through StandardScaler, imported from Scikit Learn 
+- Uses Scikit Learn's imbalanced RandomOverSampler to address imbalance between target variables
+- Uses Scikit Learn's LogisticRegression to asimilate data to a result cnsidering the available variables (labeled data) 
+- Has a Threshold of 0.75, which makes the model more selective when considering a candidate as "champion"
+
+The results given by our model are:
+- Accuracy Score = 91.4% 
+- Precision (not champion) = 97%
+- Precision (champion) = 22%
+- Recall (not champion) = 95%
+- Recall (champion) = 33%
+
+This results tell us that our model can predict a champion one of every 5 to 4 times it is tried and if given a set of champions it would correctly predict 1 in 3. Seems a bit low, but considering the variety of variables and size of the imbalance it actually gives a pretty useful view of the possible winners of the SuperBowl.
+
+## Conclusions
+
+Our model does not answer the questions in the way we expected, but actually gives a new perspective on how we can understand them:
+
+- Can the Super Bowl champion be predicted using the available information? No, but the possible winners can be narrowed down to a small number of possibilities
+- Which set of stats (Offense, Defense or Special Teams) weights the most for a team to be champion? Our PCA shows that there must be smaller categories to differentiate a teams performance and, as one might not be relevant enough, We can tell that the whole team wins championships, it's not a matter of one strong team (deffense, ofense or special teams).
+- Which specific stats weight the most for a team to be champion? Passing seems to be one of the most important characteristics to consider, but an inverse correlation with passing/runing plays tells us that actually it's a matter f balancing the trust a team has in their Quarterback and the ability of their runners.
+
+## Dashboard
+
+Using public Tableau platform, we created a web dashboard for end user that shows information about NFL statistic variables, also in the story section you can find data classified for defense and offense statistics by champion status used in the machine learning model and in same way the dashboard shows Non relevant variables dropped for model. Please see reference in the following link:
+
+[NFL Champions Analysis](https://public.tableau.com/app/profile/julio.quintana1006/viz/FinalProject_NFL_Champions_Dash/NFLChampionsAnalysis_1#1)
+
+Additionally we created a Google Slides presentation with the Overview of the project, to see it refer to the following link: [Presentation](https://docs.google.com/presentation/d/1eM06rsP77x76NgBpDXDDxPqoE1Rq0Wlk9VHd3mIImzc/edit?usp=sharing)
